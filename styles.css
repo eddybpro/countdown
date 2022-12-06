@@ -61,6 +61,13 @@ body{
     padding-bottom: .5rem;
 }
 
+.section .text-container .happy{
+    text-align: center;
+    padding: .5rem;
+    color: rgb(185, 6, 152);
+    text-transform: capitalize;
+}
+
 .section .text-container .time-container{
     display: flex;
     align-items: center;
