@@ -10,7 +10,7 @@ const congra = document.querySelector('.happy')
 
 
 const targetYear = new Date().getFullYear();
-let targetTime = new Date(`Jan 01, 2023 00:00:00`).getTime()
+let targetTime = new Date(`Jan 01, 2024 00:00:00`).getTime()
 
 
 const interval = setInterval(newYear,1000)
@@ -19,7 +19,7 @@ function newYear(){
     const currentTime = new Date().getTime();
     let difTime = (targetTime - currentTime) /1000;
     
-    let sec = Math.floor(difTime % 3600 % 60)  ;
+    let sec = Math.floor(difTime % 3600 % 60);
     let min = Math.floor(difTime % 3600 / 60);
     let hour = Math.floor(difTime / 3600 % 24);
     let day = Math.floor(difTime / (3600 * 24));
@@ -34,71 +34,14 @@ function newYear(){
     minsStr.innerText = min === 1 ? 'min' : 'mins';
     secsStr.innerText= sec === 1? 'sec' : 'secs';
     
-}
-
-let flag=false;
-
- const interval_2 = setInterval(()=>{
-    const currentTime =new Date().getTime()
-
-    if(targetTime < currentTime){
-        clearInterval(interval)
-        days.innerText = "00";
-        hours.innerText = "00";
-        mins.innerText = "00";
-        secs.innerText = "00";
+    if(difTime <= 0){
+        clearInterval(interval);
+        days.innerText = '00';
+        hours.innerText ='00';
+        mins.innerText = '00';
+        secs.innerText = '00';
+        console.log(targetYear)
         congra.textContent='happy new year! ' + targetYear;
-        
     }
-    setTimeout(()=>{
-        targetTime = new Date(`Jan 01, ${targetYear + 1} 00:00:00`).getTime()
-        congra.textContent='';
-        setInterval(newYear,1000)
-        clearInterval(interval_2)
-    },24*60*60*1000)
-},1000)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
+}
