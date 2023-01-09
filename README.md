@@ -1,2 +1,2 @@
 # countdown-timer
-## Design: https://eddybpro.github.io/countdown-timer/
+## https://eddybpro.github.io/countdown-timer/
